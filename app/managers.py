@@ -20,8 +20,8 @@ class ActorManager:
             last_name: str
     ) -> None:
         try:
-            sql = (f'INSERT INTO {self.table_name} (first_name, last_name) '
-                   f'VALUES(?, ?)')
+            sql = (f"INSERT INTO {self.table_name} (first_name, last_name) "
+                   f"VALUES(?, ?)")
             self.cursor.execute(sql, (first_name, last_name))
             self.connection.commit()
         except sqlite3.Error as e:
